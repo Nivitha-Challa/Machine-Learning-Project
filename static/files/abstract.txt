@@ -1,0 +1,14 @@
+Abstract:
+Good evg everyone this is srikar from batch 4 of resarchgroup ai and ml .let me introduce my teammates
+our project title is ckd using effective classification and using recursive feature elemination technique we done this project under
+the guidance of b sridhara murthy sir
+
+In this project we are going to detect whether a person has CKD or not.
+CKD is a condition on kidney which causes kidney to slow down its functions and eventually causing kidney falure
+Some of the causes of ckd are hypertension and diabettes.we can detect ckd using gromerular filteration rate
+where a normal perso have gfr in the range of 100  to 120 where as person with ckd will have below 60 .
+so this gfr can be calculated using 
+persons age,gender,race,these variables will become features in our model.
+Early detection and treatment can often keep ckd getting worse
+So in this project we are going to use some of the classification techniques such as SVM,KNN,Decision Tree and Random forest 
+and pick the best model suitable and also we are going to use recursive feature elimination techniques to obtain most relevant features to build an efficient model

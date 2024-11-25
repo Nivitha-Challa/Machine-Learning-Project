@@ -1,0 +1,112 @@
+<!--GUI for Breast Cancer Detection Application using SVM-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../static/js/test.js"></script>
+  <title>Chronic Kidney Disease</title> 
+</head>
+
+<body>
+  <nav class="navbar justify-content-between text-light">
+    <h3 class="navbar-brand text-center">Chronic Kidney Disease Prediction</h3>
+    <form class="form-inline" method="POST" action="/files" enctype="multipart/form-data" accept=".csv">
+      <input class="form-control mr-sm-2" type="file" name="file" required>
+      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" value="Get Result">Get Result</button>
+    </form>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="head"></h1>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-container">
+
+          <!-- Main Input For Receiving Query to our ML -->
+          <form method="post" class="form-inline" id='test'>
+            <div class="row">
+              <div class="col-md-7">
+                <img class="image" src="https://i.pinimg.com/564x/d8/ad/c5/d8adc5543f0f47ebb4e7da821f428937.jpg" width="100%" height="90%" />
+              </div>
+              <div class="col-md-5">
+                <div class="container">
+                  <h4>Enter Details</h4>
+                  <br>
+                  <div class="form-group">
+                    <label for="age">Age </label>
+                    <input type="number" step="0.01" min="0" max="100000" class="form-control" name="age" required="required" id="age" placeholder="0.1">
+                  </div>
+                  <div class="form-group">
+                    <label for="sg">Specific Gravity</label>
+                    <input type="number" step="0.01" min="0" max="100000" class="form-control" name="sg" required="required" id="sg" placeholder="0.1">
+                  </div>
+                  <div class="form-group">
+                    <label for="al">Albumin</label>
+                    <input type="number" step="0.01" min="0" max="100000" class="form-control" name="al" required="required" id ="al" placeholder="0.1" />
+                  </div>
+                  <div class="form-group">
+                    <label for="bu">Blood Urea</label>
+                    <input type="number" step="0.01" min="0" max="100000" class="form-control" name="bu" required="required" id="bu" placeholder="0.1" />
+                  </div>
+                  <div class="form-group">
+                    <label for="sc">Serum Cretinine</label>
+                    <input type="number" step="0.01" min="0" max="100000" class="form-control" name="sc" required="required" id="sc" placeholder="0.1"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="hemo">Hemoglobin</label>
+                    <input type="number" step="0.01" min="0" max="100000" class="form-control" name="hemo" required="required" id="hemo" placeholder="0.1" />
+                  </div>
+                  <div class="form-group">
+                    <label for="wbc">White Blood cell count</label>
+                    <input type="number" step="0.01" min="0" max="100000" class="form-control" name="wbc" required="required" id="wbc" placeholder="0.1"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="rbc">Red Blood cell count</label>
+                    <input type="number" step="0.01" min="0" max="100000" class="form-control" name="rbc" required="required" id="rbc" placeholder="0.1"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="htn">Hypertension</label>
+                    <input type="text" class="form-control" style="width:140px" name="htn" required="required" id="htn" placeholder="yes/no"/>
+                  </div><br>
+                  <button type="submit" class="btn btn-primary btn-block btn-md" id="pred">Predict</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div>
+            <div class="ckd alert alert-danger" role="alert">
+            CKD!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="notckd alert alert-success ">
+            NOT CKD
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        </div>
+
+        <!-- <div class="jsondata">
+          <form method="POST" action="/json" enctype="multipart/form-data" accept=".csv">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" id="formFile" name="file">
+            <p><input type="submit" value="Get Result"></p>
+          </form> -->
+         
+          <!-- <form method="POST" action="/json" enctype="multipart/form-data" accept=".csv">
+            <p><input type="file" name="file"></p>
+            <p><input type="submit" value="Get Result"></p>
+          </form> -->
+        </div>
+</body>
+
+</html>

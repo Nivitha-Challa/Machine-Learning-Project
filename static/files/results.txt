@@ -1,0 +1,3 @@
+0:CKD
+1:NOT CKD
+2:NOT CKD
